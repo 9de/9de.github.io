@@ -1,1 +1,180 @@
-<html><head><body><h3 style="color: red">Hello</h3></body></head></html>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="9de's portfolio of mindfulness and self-improvement tools">
+    <title>9de's Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        discord: {
+                            900: '#1e1f22',    // Sidebar
+                            800: '#2b2d31',    // Main bg
+                            700: '#313338',    // Channel list
+                            600: '#383a40',    // Hover state
+                            500: '#404249',    // Input bg
+                            400: '#949ba4',    // Secondary text
+                            300: '#b5bac1',    // Primary text
+                            accent: '#5865f2'   // Discord blue
+                        }
+                    }
+                }
+            }
+        }
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark ? 'dark' : 'light');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedMode = localStorage.getItem('darkMode') || 'dark';
+            if (savedMode === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50 dark:from-discord-800 dark:via-discord-800 dark:to-discord-700 min-h-screen transition-colors duration-300">
+    <!-- Background pattern -->
+    <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.05)_1px,transparent_0)] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.03)_1px,transparent_0)] bg-[size:40px_40px]"></div>
+    
+    <!-- Theme Toggle Button -->
+    <div class="fixed top-6 right-6">
+        <button onclick="toggleDarkMode()" 
+                class="bg-white dark:bg-discord-600 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <i class="fas fa-moon dark:hidden text-gray-700"></i>
+            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+        </button>
+    </div>
+
+    <main class="max-w-6xl mx-auto p-6">
+        <header class="text-center mb-20 pt-16">
+            <div class="float-animation inline-block mb-6 p-2 bg-white/50 dark:bg-discord-600/50 backdrop-blur-sm rounded-2xl shadow-lg">
+                <div class="bg-gradient-to-r from-discord-accent via-blue-500 to-cyan-500 text-white px-6 py-3 rounded-xl">
+                    <span class="text-sm font-medium tracking-wider">WELCOME TO</span>
+                </div>
+            </div>
+            <h1 class="text-6xl font-bold mb-6 bg-gradient-to-r from-discord-accent via-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                9de's Projects
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-discord-300 max-w-2xl mx-auto">
+                Exploring the intersection of technology, mindfulness, and personal growth
+            </p>
+        </header>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 px-4">
+            <!-- Mindful Journal Card -->
+            <a href="https://9de.github.io/Mindful-Journal/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="group bg-white dark:bg-discord-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-discord-accent p-8">
+                        <i class="fas fa-journal-whills text-5xl text-white/90"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/80 to-discord-accent/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <span class="text-white font-semibold px-4 py-2 rounded-lg border-2 border-white/50">
+                            Open in New Tab →
+                        </span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Mindful Journal</h2>
+                    <p class="text-gray-600 dark:text-discord-400 mb-6">A digital sanctuary for cultivating mindfulness, gratitude, and self-reflection through daily journaling practices.</p>
+                    <div class="flex items-center text-discord-accent">
+                        <span class="text-sm font-semibold mr-2">View Details</span>
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Daily Improvement Checklist Card -->
+            <a href="https://9de.github.io/daily-improvement-checklist/"
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="group bg-white dark:bg-discord-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-discord-accent p-8">
+                        <i class="fas fa-list-check text-5xl text-white/90"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-600/80 to-discord-accent/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <span class="text-white font-semibold px-4 py-2 rounded-lg border-2 border-white/50">
+                            Open in New Tab →
+                        </span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Daily Improvement</h2>
+                    <p class="text-gray-600 dark:text-discord-400 mb-6">Transform your daily routine with a powerful habit tracking system designed to foster consistent personal growth.</p>
+                    <div class="flex items-center text-discord-accent">
+                        <span class="text-sm font-semibold mr-2">View Details</span>
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- JSON Page Card -->
+            <a href="https://9de.github.io/json-page/"
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="group bg-white dark:bg-discord-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-discord-accent p-8">
+                        <i class="fas fa-code text-5xl text-white/90"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600/80 to-discord-accent/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <span class="text-white font-semibold px-4 py-2 rounded-lg border-2 border-white/50">
+                            Open in New Tab →
+                        </span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">JSON Page</h2>
+                    <p class="text-gray-600 dark:text-discord-400 mb-6">Powerful tool for developers to visualize, validate, and manipulate JSON data structures with ease.</p>
+                    <div class="flex items-center text-discord-accent">
+                        <span class="text-sm font-semibold mr-2">View Details</span>
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <footer class="mt-24 mb-8 text-center">
+            <div class="inline-flex flex-col items-center">
+                <div class="mb-6 flex space-x-4">
+                    <a href="https://github.com/9de" 
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="bg-white dark:bg-discord-600 p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                       aria-label="View 9de's GitHub profile">
+                        <i class="fab fa-github text-2xl text-gray-700 dark:text-white"></i>
+                    </a>
+                </div>
+                <div class="bg-white/50 dark:bg-discord-700/50 backdrop-blur-sm px-8 py-4 rounded-2xl shadow-lg">
+                    <p class="text-gray-600 dark:text-discord-300">Crafted with ❤️ by 9de</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
